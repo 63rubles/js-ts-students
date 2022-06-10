@@ -32,7 +32,7 @@ beforeEach(() => {
             {
                 type: "FIRE-STATION",
                 budget: 500000,
-                staffCount: 240, address: {street: {title: "South Str"}}
+                staffCount: 1000, address: {street: {title: "South Str"}}
             }
         ],
         citizensNumber: 1000000
@@ -42,29 +42,36 @@ beforeEach(() => {
 // 01. создайте в отдельном файле функциюб чтобы тесты прошли
 test("Budget should be for changed fot HOSPITAL", () => {
     addMoneyToBudget(city.governmentBuildings[0], 100000);
+
     expect(city.governmentBuildings[0].budget).toBe(300000);
 });
 
 // 01. Тест должен пройти
 test("Budget should be changed for FIRE-STATION", () => {
     addMoneyToBudget(city.governmentBuildings[1], -100000);
+
     expect(city.governmentBuildings[1].budget).toBe(400000);
 });
 
 // 01. создайте в том же файле еще одну функцию, чтобы тесты прошли
 test("House should be repaired", () => {
     repairHouse(city.houses[1]);
+
     expect(city.houses[1].repaired).toBeTruthy();
 });
 
 // 01. создайте в том же файле еще одну функцию, чтобы тесты прошли
 test("Staff should be fired", () => {
     toFireStaff(city.governmentBuildings[0], 20);
+
     expect(city.governmentBuildings[0].staffCount).toBe(180);
 });
 
 // 01. создайте в том же файле еще одну функцию, чтобы тесты прошли
 test("Staff should be hired", () => {
     toHireStaff(city.governmentBuildings[0], 20);
+    toHireStaff(city.governmentBuildings[1], 100);
+
     expect(city.governmentBuildings[0].staffCount).toBe(220);
+    expect(city.governmentBuildings[1].staffCount).toBe(1100);
 });
