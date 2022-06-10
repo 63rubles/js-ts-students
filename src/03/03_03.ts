@@ -6,3 +6,7 @@ export const addSkill = (student: StudentType, skill: string) => {
         title: skill
     })
 }
+
+export const makeStudentActive = (s: StudentType) => {
+    s.isActive = true;
+}
