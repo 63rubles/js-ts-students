@@ -23,3 +23,11 @@ export const addMoneyToBudget = (building: GovernmentBuildingType, budget: numbe
 export function repairHouse(house: HouseType) {
     return house.repaired = true
 }
+
+export const toFireStaff = (building: GovernmentBuildingType, staffCountToFire: number) => {
+    building.staffCount -= staffCountToFire;
+}
+
+export function toHireStaff(building: GovernmentBuildingType, staffCountToHire: number) {
+    return building.staffCount += staffCountToHire;
+}
