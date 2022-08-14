@@ -1,9 +1,7 @@
 test("choose humans older than 90", ()=>{
     const ages = [100,20,33,91,53,59]
 
-    const predicate = (age: number) => {
-        return age > 90
-    }
+    const predicate = (age: number) => age > 90
 
     const oldAges = ages.filter(predicate)
 
