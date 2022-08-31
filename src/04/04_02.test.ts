@@ -58,6 +58,6 @@ test('buildings with correct staff count', () => {
         city.governmentBuildings,
         500)
 
-    expect(buildings.length).toBe(2);
+    expect(buildings.length).toBe(1);
     expect(buildings[0].type).toBe('FIRE-STATION')
 })
